@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -83,13 +84,15 @@ public class MainActivity extends AppCompatActivity {
 
                         }else{
 
-                            Log.e("API CALL","Hello  Error");
+                            Toast.makeText(MainActivity.this, "Error! API is not Responding", Toast.LENGTH_SHORT).show();
 
                         }
                     }
 
                     @Override
                     public void onFailure(@NonNull Call<LauncherApi> call, @NonNull Throwable t) {
+
+                        Toast.makeText(MainActivity.this, "Error! API is not Working", Toast.LENGTH_SHORT).show();
 
                     }
                 }
